@@ -8,6 +8,8 @@
    -- Other biostatistical tests
 
  - Changelog:
+   -- version 0.1.1 Seok Chol Hong shulkhorn@gmail.com
+      --- faster factorial method by skipping repeatative calculation in large scale
    -- version 0.1.0 Seok Chol Hong shulkhorn@gmail.com
       --- Fisher's exact test with logarithmic scale for large values
 
