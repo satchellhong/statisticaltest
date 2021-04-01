@@ -20,9 +20,11 @@ namespace STATTEST
 	**    n21  n22  | n2_
 	**   -----------+----
 	**    n_1  n_2  | n
+	**
+	** return two-tailed P-value
 	**/
-	double GetFisherPvalue(int n11, int n12, int n21, int n22, bool twosided=false);
-	double FastGetFisherPvalue(int n11, int n12, int n21, int n22, bool twosided=false);
+	double GetFisherPvalue(int n11, int n12, int n21, int n22);
+	double FastGetFisherPvalue(int n11, int n12, int n21, int n22);
 	double LogHypergeometricProb(int, int, int, int);
 	double FastLogHypergeometricProb(double*, int, int, int, int);
 	//===============================================================//

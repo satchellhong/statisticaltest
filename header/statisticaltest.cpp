@@ -29,7 +29,8 @@ double STATTEST::LogHypergeometricProb(int a, int b, int c, int d) {
 	- LogFac(b) - LogFac(c) - LogFac(d) - LogFac(a+b+c+d);
 }
 
-double STATTEST::GetFisherPvalue(int a, int b, int c, int d, bool twosided) {
+double STATTEST::GetFisherPvalue(int a, int b, int c, int d) {
+
 	int n = a + b + c + d;
 	double logpCutoff = LogHypergeometricProb(a,b,c,d);
 	double pFraction = 0;
@@ -45,10 +46,7 @@ double STATTEST::GetFisherPvalue(int a, int b, int c, int d, bool twosided) {
 	// std::cout << "Two-sided p-value is "       << exp(logpValue)     << std::endl;
 	// std::cout << "One-sided p-value is "       << exp(logpValue)/2.  << std::endl;
 
-	if(twosided)
-		return exp(logpValue);
-	else
-		return exp(logpValue)/2.;
+	return exp(logpValue);
 }
 
 // fast calculation
@@ -64,7 +62,7 @@ double STATTEST::FastLogHypergeometricProb(double* logFacs, int a, int b, int c,
 	- logFacs[a] - logFacs[b] - logFacs[c] - logFacs[d] - logFacs[a+b+c+d];
 }
 
-double STATTEST::FastGetFisherPvalue(int a, int b, int c, int d, bool twosided) {
+double STATTEST::FastGetFisherPvalue(int a, int b, int c, int d) {
 	int n = a + b + c + d;
 	double* logFacs = new double[n+1];
 	InitLogFacs(logFacs, n);
@@ -80,10 +78,7 @@ double STATTEST::FastGetFisherPvalue(int a, int b, int c, int d, bool twosided) 
 
 	delete [] logFacs;
 
-	if(twosided)
-		return exp(logpValue);
-	else
-		return exp(logpValue)/2.;
+	return exp(logpValue);
 }
 
 

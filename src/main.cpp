@@ -5,7 +5,7 @@
 using namespace std;
 using namespace STATTEST;
 int main() {
-	cout << GetFisherPvalue(5,0,1,4) << endl;
-	cout << FastGetFisherPvalue(5,0,1,4) << endl;
+	cout << GetFisherPvalue(14,4,61,40) << endl;
+	cout << FastGetFisherPvalue(14,4,61,40) << endl;
 	return 0;
 }
